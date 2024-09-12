@@ -9,7 +9,7 @@ class SayTwoPage extends GetView<SayTwoLogic> {
   @override
   Widget build(BuildContext context) {
     Widget _tapItem(int index, BuildContext context) {
-      final titles = ['Clean all data', 'About US', 'Privacy Policy'];
+      final titles = ['Clean all data', 'About US'];
       return GestureDetector(
         child: Container(
           width: double.infinity,
@@ -21,23 +21,17 @@ class SayTwoPage extends GetView<SayTwoLogic> {
               titles[index],
               style: const TextStyle(fontSize: 15),
             )),
-            const Icon(
+            index != 1 ? const Icon(
               Icons.keyboard_arrow_right,
               size: 20,
               color: Colors.grey,
-            ),
+            ) : Text('1.0.0'),
           ].toRow(mainAxisAlignment: MainAxisAlignment.spaceBetween),
         ),
         onTap: () {
           switch (index) {
             case 0:
               controller.cleanSaysData();
-              break;
-            case 1:
-              controller.aboutSaysUS(context);
-              break;
-            case 2:
-              controller.aboutSaysPrivacy(context);
               break;
           }
         },
@@ -68,7 +62,6 @@ class SayTwoPage extends GetView<SayTwoLogic> {
                 child: <Widget>[
                   _tapItem(0, context),
                   _tapItem(1, context),
-                  _tapItem(2, context)
                 ].toColumn(
                     separator: Divider(
                   height: 14,
