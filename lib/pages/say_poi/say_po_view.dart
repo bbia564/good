@@ -11,7 +11,7 @@ class SayPoView extends GetView<PageLogic> {
     return Scaffold(
       body: Center(
         child: Obx(
-          () => controller.mante.value
+          () => controller.wilderman.value
               ? const CircularProgressIndicator(color: Colors.limeAccent)
               : buildError(),
         ),
@@ -26,7 +26,7 @@ class SayPoView extends GetView<PageLogic> {
         children: [
           IconButton(
             onPressed: () {
-              controller.bfrvq();
+              controller.ilaq();
             },
             icon: const Icon(
               Icons.restart_alt,

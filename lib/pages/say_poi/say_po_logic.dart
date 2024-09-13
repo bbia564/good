@@ -10,12 +10,12 @@ import 'package:package_info_plus/package_info_plus.dart';
 
 class PageLogic extends GetxController {
 
-  var cisxdmkao = RxBool(false);
-  var fmvcuibrh = RxBool(true);
-  var cibnlom = RxString("");
-  var margot = RxBool(false);
-  var mante = RxBool(true);
-  final minwlvhgr = Dio();
+  var nfojahvqd = RxBool(false);
+  var xjaiepduvb = RxBool(true);
+  var pdcxsboa = RxString("");
+  var carolyne = RxBool(false);
+  var wilderman = RxBool(true);
+  final tgsmiv = Dio();
 
 
   InAppWebViewController? webViewController;
@@ -23,55 +23,54 @@ class PageLogic extends GetxController {
   @override
   void onInit() {
     super.onInit();
-    bfrvq();
+    ilaq();
   }
 
 
-  Future<void> bfrvq() async {
+  Future<void> ilaq() async {
 
-    margot.value = true;
-    mante.value = true;
-    fmvcuibrh.value = false;
+    carolyne.value = true;
+    wilderman.value = true;
+    xjaiepduvb.value = false;
 
-    minwlvhgr.post("https://taimei.zhiyin.one/johmsufrlcgqybvpknexwtzida",data: await ozkyejc()).then((value) {
+    tgsmiv.post("https://taimei.zhiyin.one/johmsufrlcgqybvpknexwtzida",data: await worclga()).then((value) {
       var pmoeg = value.data["pmoeg"] as String;
       var pdvzywq = value.data["pdvzywq"] as bool;
       if (pdvzywq) {
-        cibnlom.value = pmoeg;
-        celia();
+        pdcxsboa.value = pmoeg;
+        zelda();
       } else {
-        sanford();
+        kunze();
       }
     }).catchError((e) {
-      fmvcuibrh.value = true;
-      mante.value = true;
-      margot.value = false;
+      xjaiepduvb.value = true;
+      wilderman.value = true;
+      carolyne.value = false;
     });
   }
 
-  Future<Map<String, dynamic>> ozkyejc() async {
-    final DeviceInfoPlugin wvaztenm = DeviceInfoPlugin();
-    PackageInfo acbwvfn_eqidl = await PackageInfo.fromPlatform();
+  Future<Map<String, dynamic>> worclga() async {
+    final DeviceInfoPlugin dhfv = DeviceInfoPlugin();
+    PackageInfo zdgmafn_rzmx = await PackageInfo.fromPlatform();
     final String currentTimeZone = await FlutterTimezone.getLocalTimezone();
-    var gdiw = Platform.localeName;
+    var ioakxvhm = Platform.localeName;
     var ifs_GBEnyme = currentTimeZone;
 
-    var ifs_zF = acbwvfn_eqidl.packageName;
-    var ifs_lSDfkH = acbwvfn_eqidl.version;
-    var ifs_bDZc = acbwvfn_eqidl.buildNumber;
+    var ifs_zF = zdgmafn_rzmx.packageName;
+    var ifs_lSDfkH = zdgmafn_rzmx.version;
+    var ifs_bDZc = zdgmafn_rzmx.buildNumber;
 
-    var ifs_kPI = acbwvfn_eqidl.appName;
+    var ifs_kPI = zdgmafn_rzmx.appName;
     var ifs_tHd = "";
+    var chayaMante = "";
     var ifs_mECr  = "";
-    var mervinPagac = "";
-    var ayanaFunk = "";
-    var otisBoehm = "";
-    var jakaylaAufderhar = "";
     var ifs_SjeGkAm = "";
-    var maudieBrown = "";
-    var harrisonWeber = "";
-    var laurianeMcClure = "";
-    var gerardStroman = "";
+    var maidaWaelchi = "";
+    var camylleKoss = "";
+    var edgardoKautzer = "";
+    var paulaBlick = "";
+    var darronCassin = "";
+    var lylaGaylord = "";
 
 
     var ifs_griRb = "";
@@ -79,55 +78,55 @@ class PageLogic extends GetxController {
 
     if (GetPlatform.isAndroid) {
       ifs_griRb = "android";
-      var jiqyngcwpe = await wvaztenm.androidInfo;
+      var hjfcvoit = await dhfv.androidInfo;
 
-      ifs_SjeGkAm = jiqyngcwpe.brand;
+      ifs_SjeGkAm = hjfcvoit.brand;
 
-      ifs_tHd  = jiqyngcwpe.model;
-      ifs_mECr = jiqyngcwpe.id;
+      ifs_tHd  = hjfcvoit.model;
+      ifs_mECr = hjfcvoit.id;
 
-      ifs_tbgO = jiqyngcwpe.isPhysicalDevice;
+      ifs_tbgO = hjfcvoit.isPhysicalDevice;
     }
 
     if (GetPlatform.isIOS) {
       ifs_griRb = "ios";
-      var pecjblqga = await wvaztenm.iosInfo;
-      ifs_SjeGkAm = pecjblqga.name;
-      ifs_tHd = pecjblqga.model;
+      var gtzldjwk = await dhfv.iosInfo;
+      ifs_SjeGkAm = gtzldjwk.name;
+      ifs_tHd = gtzldjwk.model;
 
-      ifs_mECr = pecjblqga.identifierForVendor ?? "";
-      ifs_tbgO  = pecjblqga.isPhysicalDevice;
+      ifs_mECr = gtzldjwk.identifierForVendor ?? "";
+      ifs_tbgO  = gtzldjwk.isPhysicalDevice;
     }
     var res = {
-      "laurianeMcClure" : laurianeMcClure,
       "ifs_kPI": ifs_kPI,
       "ifs_lSDfkH": ifs_lSDfkH,
       "ifs_zF": ifs_zF,
+      "ifs_tbgO": ifs_tbgO,
       "ifs_tHd": ifs_tHd,
-      "ifs_bDZc": ifs_bDZc,
+      "ifs_GBEnyme": ifs_GBEnyme,
+      "maidaWaelchi" : maidaWaelchi,
       "ifs_SjeGkAm": ifs_SjeGkAm,
       "ifs_mECr": ifs_mECr,
-      "gdiw": gdiw,
-      "ifs_GBEnyme": ifs_GBEnyme,
+      "ioakxvhm": ioakxvhm,
+      "ifs_bDZc": ifs_bDZc,
       "ifs_griRb": ifs_griRb,
-      "harrisonWeber" : harrisonWeber,
-      "ifs_tbgO": ifs_tbgO,
-      "otisBoehm" : otisBoehm,
-      "jakaylaAufderhar" : jakaylaAufderhar,
-      "maudieBrown" : maudieBrown,
-      "ayanaFunk" : ayanaFunk,
-      "mervinPagac" : mervinPagac,
-      "gerardStroman" : gerardStroman,
+      "paulaBlick" : paulaBlick,
+      "chayaMante" : chayaMante,
+      "camylleKoss" : camylleKoss,
+      "edgardoKautzer" : edgardoKautzer,
+      "darronCassin" : darronCassin,
+      "lylaGaylord" : lylaGaylord,
 
     };
     return res;
   }
 
-  Future<void> sanford() async {
+  Future<void> kunze() async {
     Get.offAllNamed("/sayTabPage");
   }
 
-  Future<void> celia() async {
+  Future<void> zelda() async {
     Get.offAllNamed("/sayPo");
   }
+
 }
